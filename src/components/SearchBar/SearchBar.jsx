@@ -1,25 +1,30 @@
 import { useState } from 'react';
-import logo from '../../assets/img/veggies.svg';
+import logo from '../../assets/svg/veggies.svg';
 import {BiSearchAlt} from 'react-icons/bi'; 
 import { useNavigate } from "react-router-dom";
 
 function SearchBar({ handleSearch }) {
+  // react hooks
   const [click, setClick] = useState(false);
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
+  // handle click used to pop searchbar in mobile view
   function handleClick() {
     setClick(!click);
   }; 
 
+  // close searchbar on submit in mobile view
   function closeMobileMenu() {
     setClick(false);
   };
 
+  // update input value
   function updateSeach(e) {
     setSearch(e.target.value)
   };
 
+  // component render
   return (
 		<>
     <div className="z-50 sticky top-0">
@@ -37,8 +42,9 @@ function SearchBar({ handleSearch }) {
         
 
           <div className= {'md:flex flex-row items-center justify-center mx-auto max-w-72 ' + (click ? ' flex' : ' hidden')} >
-            <form className='p-1.5 w-max' onSubmit={(e)=> {e.preventDefault(); handleSearch(search); navigate('/'); setSearch('')}}>
+            <form className='p-1.5 w-max' onSubmit={(e)=> {e.preventDefault(); handleSearch(search); navigate('/'); setSearch(''); closeMobileMenu()}}>
                 <input type="text"
+                       name='search'
                        placeholder='Search for a recipe...'
                        value={search}
                        onChange={(e) => updateSeach(e)}

@@ -6,11 +6,12 @@ export default {
     extend: {},
     colors: {
 			cream: '#F8EFE4',
-			yellow: '#FAD02C',
-			rosewater: '#E6C2BF',
+			yellow: '#f5C406',
+			rosewater: '#CE8882',
 			jetblack: '#282120',
 			white: '#ffffff',
-      grey: '#606060'
+      grey: '#606060',
+      bluishblack: '#1f213a'
 		},
   },
   plugins: [],

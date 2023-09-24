@@ -28,7 +28,7 @@ function SearchBar({ handleSearch }) {
   return (
 		<>
     <div className="z-50 sticky top-0">
-      <nav className="w-auto relative flex flex-wrap items-center justify-between p-3 bg-cream">
+      <nav className="w-auto relative flex flex-wrap items-center justify-between p-3 bg-cream shadow-xl">
         <div className="container flex flex-wrap items-center justify-between">
             <div className="w-full flex items-center justify-between md:w-auto">
               <a href="" className='flex flex-row items-center'>
@@ -41,14 +41,14 @@ function SearchBar({ handleSearch }) {
             </div>
         
 
-          <div className= {'md:flex flex-row items-center justify-center mx-auto max-w-72 ' + (click ? ' flex' : ' hidden')} >
-            <form className='p-1.5 w-max' onSubmit={(e)=> {e.preventDefault(); handleSearch(search); navigate('/'); setSearch(''); closeMobileMenu()}}>
+          <div className= {'md:flex flex-row items-center justify-center mx-auto max-w-72' + (click ? ' flex' : ' hidden')} >
+            <form className='p-1.5 sm:w-max w-11/12' onSubmit={(e)=> {e.preventDefault(); handleSearch(search); navigate('/'); setSearch(''); closeMobileMenu()}}>
                 <input type="text"
                        name='search'
                        placeholder='Search for a recipe...'
                        value={search}
                        onChange={(e) => updateSeach(e)}
-                       className=' md:w-96 text-verde py-2 pl-3 pr-10 rounded-full font-medium focus:outline-yellow focus:ring-yellow focus:border-yellow' />
+                       className='sm:w-96 w-full text-verde py-2 pl-3 pr-10 rounded-full font-medium focus:outline-yellow focus:ring-yellow focus:border-yellow' />
                 <button className="-ml-8 border-6 bg-transparent w-8 h-8 text-jetblack" type="submit"><BiSearchAlt/></button>
             </form>
           </div>

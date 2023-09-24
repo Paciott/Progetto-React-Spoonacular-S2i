@@ -15,8 +15,8 @@ let diets = recipe.diets.map((d, i) => <span className="border px-1 m-1 border-r
         <p className="flex flex-wrap px-3 text-sm my-3">{diets}</p>
       </div>
       <div className="px-5 pb-3 flex flex-col items-center">
-        <p className="line-clamp-4 text-grey leading-relaxed my-3">{striptags(recipe.summary)}</p>
-        <button className="bg-yellow text-white font-semibold border border-yellow rounded-full px-3 py-2 my-4 uppercase transition duration-150 ease-in-out hover:border-jetblack hover:scale-105"><Link to={`/recipe/${recipe.id}`}>Explore This Recipe</Link></button>
+        <p className="w-full line-clamp-4 text-grey leading-relaxed my-3">{striptags(recipe.summary)}</p>
+        <button className="my-4"><Link to={`/recipe/${recipe.id}`} className="flex bg-yellow text-white font-semibold border border-yellow rounded-full px-3 py-2 uppercase transition duration-150 ease-in-out hover:border-jetblack hover:scale-105">Explore This Recipe</Link></button>
       </div>
     </div>
   )

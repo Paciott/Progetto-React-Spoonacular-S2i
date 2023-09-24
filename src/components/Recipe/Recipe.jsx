@@ -37,6 +37,7 @@ export default function Recipe() {
         </div>
         <div className="mx-5">
           <h3 className="text-lg font-bold uppercase border-b-2 border-yellow text-bluishblack my-3">Presentation:</h3>
+          <span className="leading-loose my-6 italic">{`Ready in only ${data.data.readyInMinutes} minutes!`}</span>
           <p className="leading-loose my-6">{striptags(data.data.summary)}</p>
         </div>
         <div className="mx-5 bg-cream rounded">

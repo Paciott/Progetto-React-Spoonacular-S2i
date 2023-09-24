@@ -73,11 +73,14 @@ function App() {
   // function that fetches recipes based on user input
   async function getRecipes(query) {
     try {
-      setIsLoading(true);
-      const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&diet=vegetarian&addRecipeInformation=true&query=${query}`;
-      let res = await axios.get(url);
-      console.log(res);
-      setRecipes(res.data.results);
+      if(query.trim() === '') {
+        return
+      } else {
+        setIsLoading(true);
+        const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&diet=vegetarian&addRecipeInformation=true&query=${query}`;
+        let res = await axios.get(url);
+        setRecipes(res.data.results);
+      }
     } catch (e) {
       console.log(`errore!, ${e}`);
     } finally {
